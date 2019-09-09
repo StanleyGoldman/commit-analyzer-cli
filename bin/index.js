@@ -77,6 +77,7 @@ var context = { cwd: process.cwd(), env: process.env, stdout: process.stderr, st
                     context.nextRelease = nextRelease;
                     nextRelease.version = getNextVersion(context);
                     process.stdout.write(nextRelease.version);
+                    process.stdout.write(require('os').EOL);
                     return [2 /*return*/];
                 }
                 return [3 /*break*/, 7];

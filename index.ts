@@ -29,6 +29,7 @@ const context: any = { cwd: process.cwd(), env: process.env, stdout: process.std
             context.nextRelease = nextRelease;
             nextRelease.version = getNextVersion(context);
             process.stdout.write(nextRelease.version);
+            process.stdout.write(require('os').EOL);
             return;
         }
 
