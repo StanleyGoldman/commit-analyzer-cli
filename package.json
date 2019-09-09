@@ -1,0 +1,29 @@
+{
+  "name": "commit-analyzer-cli",
+  "version": "1.0.0",
+  "description": "Commit Analyzer CLI",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "tsc --outDir bin",
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanleyGoldman/commit-analyzer-cli.git"
+  },
+  "author": "Stanley Goldman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StanleyGoldman/commit-analyzer-cli/issues"
+  },
+  "homepage": "https://github.com/StanleyGoldman/commit-analyzer-cli#readme",
+  "dependencies": {
+    "dev-null": "^0.1.1",
+    "semantic-release": "^15.13.24",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.4"
+  }
+}
