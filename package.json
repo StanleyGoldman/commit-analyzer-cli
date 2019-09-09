@@ -1,6 +1,6 @@
 {
   "name": "commit-analyzer-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Commit Analyzer CLI",
   "main": "bin/index.js",
   "scripts": {
