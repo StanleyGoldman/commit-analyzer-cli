@@ -44,7 +44,7 @@ var git = require("semantic-release/lib/git");
 var getNextVersion = require("semantic-release/lib/get-next-version");
 var getLastRelease = require("semantic-release/lib/get-last-release");
 var utils = require("semantic-release/lib/plugins/utils");
-var context = { cwd: process.cwd, env: process.env, stdout: devnull(), stderr: process.stderr };
+var context = { cwd: process.cwd(), env: process.env, stdout: devnull(), stderr: process.stderr };
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var _a, plugins, options, _b, _c, nextRelease, _d, e_1;
     return __generator(this, function (_e) {

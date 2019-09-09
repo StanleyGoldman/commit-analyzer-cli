@@ -9,7 +9,7 @@ const getNextVersion = require("semantic-release/lib/get-next-version");
 const getLastRelease = require("semantic-release/lib/get-last-release");
 const utils = require("semantic-release/lib/plugins/utils");
 
-const context: any = { cwd: process.cwd, env: process.env, stdout: devnull(), stderr: process.stderr };
+const context: any = { cwd: process.cwd(), env: process.env, stdout: devnull(), stderr: process.stderr };
 
 (async () => {
     try {

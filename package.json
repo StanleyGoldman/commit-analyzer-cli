@@ -1,11 +1,14 @@
 {
   "name": "commit-analyzer-cli",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Commit Analyzer CLI",
   "main": "bin/index.js",
   "scripts": {
     "build": "tsc --outDir bin",
     "start": "ts-node index.ts"
+  },
+  "bin": {
+    "commit-analyzer": "bin/index.js"
   },
   "repository": {
     "type": "git",
