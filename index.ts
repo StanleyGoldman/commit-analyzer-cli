@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var devnull = require('dev-null');
 const getLogger = require("semantic-release/lib/get-logger");
 const getConfig = require("semantic-release/lib/get-config");
 const getCommits = require("semantic-release/lib/get-commits");
@@ -9,7 +8,7 @@ const getNextVersion = require("semantic-release/lib/get-next-version");
 const getLastRelease = require("semantic-release/lib/get-last-release");
 const utils = require("semantic-release/lib/plugins/utils");
 
-const context: any = { cwd: process.cwd(), env: process.env, stdout: devnull(), stderr: process.stderr };
+const context: any = { cwd: process.cwd(), env: process.env, stdout: process.stderr, stderr: process.stderr };
 
 (async () => {
     try {
@@ -24,12 +23,13 @@ const context: any = { cwd: process.cwd(), env: process.env, stdout: devnull(), 
         const nextRelease: any = { type: await plugins.analyzeCommits(context), gitHead: await git.getGitHead({ cwd: context.cwd, env: context.env }) };
 
         if (!nextRelease.type) {
-            return false;
+            return;
         }
         else {
             context.nextRelease = nextRelease;
             nextRelease.version = getNextVersion(context);
-            return nextRelease.version;
+            process.stdout.write(nextRelease.version);
+            return;
         }
 
     } catch (e) {

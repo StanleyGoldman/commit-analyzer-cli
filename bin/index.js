@@ -36,7 +36,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var devnull = require('dev-null');
 var getLogger = require("semantic-release/lib/get-logger");
 var getConfig = require("semantic-release/lib/get-config");
 var getCommits = require("semantic-release/lib/get-commits");
@@ -44,7 +43,7 @@ var git = require("semantic-release/lib/git");
 var getNextVersion = require("semantic-release/lib/get-next-version");
 var getLastRelease = require("semantic-release/lib/get-last-release");
 var utils = require("semantic-release/lib/plugins/utils");
-var context = { cwd: process.cwd(), env: process.env, stdout: devnull(), stderr: process.stderr };
+var context = { cwd: process.cwd(), env: process.env, stdout: process.stderr, stderr: process.stderr };
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var _a, plugins, options, _b, _c, nextRelease, _d, e_1;
     return __generator(this, function (_e) {
@@ -72,12 +71,13 @@ var context = { cwd: process.cwd(), env: process.env, stdout: devnull(), stderr:
             case 5:
                 nextRelease = (_d.gitHead = _e.sent(), _d);
                 if (!nextRelease.type) {
-                    return [2 /*return*/, false];
+                    return [2 /*return*/];
                 }
                 else {
                     context.nextRelease = nextRelease;
                     nextRelease.version = getNextVersion(context);
-                    return [2 /*return*/, nextRelease.version];
+                    process.stdout.write(nextRelease.version);
+                    return [2 /*return*/];
                 }
                 return [3 /*break*/, 7];
             case 6:
